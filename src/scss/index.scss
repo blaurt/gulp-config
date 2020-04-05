@@ -1,0 +1,12 @@
+@import "helper";
+
+$red: #ff0000;
+
+h1 {
+  color: $red;
+}
+
+ul {
+  @include clear-list();
+  display: flex;
+}
