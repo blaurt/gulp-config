@@ -32,6 +32,10 @@ function scss() {
     .pipe(dest("dist"));
 }
 
+function copyImages() {
+  return src("./src/images/**.*").pipe(dest(`${DIST_FOLDER_NAME}/images`));
+}
+
 function clear() {
   return del("dist");
 }
@@ -48,4 +52,3 @@ function serve() {
 module.exports.build = series(clear, scss, html);
 module.exports.clear = clear;
 module.exports.default = series(clear, scss, html, serve);
-// https://www.npmjs.com/package/gulp-file-include
